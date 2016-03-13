@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <cstring>
 
+MemoryAllocatingERROR MEMORYALLOC;
+
 char convertIntToChar(long int integer){return integer - '0';}
 
 RationalNumber::RationalNumber(){
@@ -94,4 +96,8 @@ RationalNumber::RationalNumber(const RationalNumber& temp){
     strcpy(numerator, temp.numerator);
     denominator = (char*)malloc(strlen(temp.denominator) * sizeof(char));
     strcpy(denominator, temp.denominator);
+};
+
+RationalNumber::RationalNumber(const char* temp){
+
 };

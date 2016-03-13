@@ -2,10 +2,17 @@
 
 class DenominatorIsZeroERROR{
 public:
-    DenominatorIsZeroERROR(){printf("The denominator is zero - ERROR CODE 001\n");};
+    DenominatorIsZeroERROR(){printf("The denominator is zero - ERROR CODE 1\n");};
 };
 
-class ExceptionCatcher{
+class MemoryAllocatingERROR{
 public:
-    ExceptionCatcher(int size){printf("Не удалось выделить %i байт памяти!\n", size);};
+    MemoryAllocatingERROR(){};
+    MemoryAllocatingERROR(int size){printf("Could not allocate %i bytes of memory - ERROR CODE 2\n", size);};
+    
+    void MemoryCheck(void* pointer, int sizeOfAllocMemory){
+        if (pointer == NULL) {
+            MemoryAllocatingERROR(sizeOfAllocMemory);
+        }
+    }
 };

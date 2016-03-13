@@ -3,7 +3,8 @@ public:
     DenominatorIsZeroERROR();
 };
 
-class ExceptionCatcher{
+class MemoryAllocatingERROR{
 public:
-    ExceptionCatcher(int);
+    MemoryAllocatingERROR();
+    MemoryAllocatingERROR(int);
 };
